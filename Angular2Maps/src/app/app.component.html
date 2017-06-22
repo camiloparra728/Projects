@@ -1,0 +1,64 @@
+<div class="col-md-12">
+  <div class="col-md-3">
+    <h1>{{ title }}</h1>
+  </div>
+</div>
+
+<div  class="col-md-12">
+
+  <div class="row">
+      <br>
+      
+<br>
+<br>
+<br>
+ <div class="col-md-6">  		<div *ngIf="viewMagic" id="loader">
+    		<div class="dot"></div>
+        
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+      
+			<div class="dot"></div>
+			<div class="dot"></div>
+      
+			<div class="dot"></div>
+			<div class="dot"></div>
+			
+		</div></div>
+  <div class="col-md-2">
+    <input id="magic" type="button" value="{{magic}}" class="btn btn-info" (click)="start()">
+  
+  </div>
+     <div id="go"  class="col-md-2">
+    
+  <alert type="info"> {{message}}.</alert>
+  </div> 
+    <br>
+<br>
+<br>
+<br>
+  </div>
+</div>
+
+
+<div class="col-md-12">
+  <div *ngIf="!loadedInfo" class="floating-panel">
+    <p>
+      <alert *ngIf="anyErrors" type="info"> Error: Connection error with azureblobs, please refresh page. Thanks.</alert>
+    </p>
+    
+    </div>
+    
+    <div *ngIf="!anyErrors"  class="col-md-12">
+      
+    <agm-map #map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom"
+      [disableDefaultUI]="false"
+      [zoomControl]="false">
+  <agm-marker  [latitude]="m.latitude" [longitude]="m.longitude"  [visible]= "true" [iconUrl]="m.iconUrl" [label]="m.label" *ngFor="let m of markersAgm; let i = index" (markerClick)="markerClick(m)">
+     
+  </agm-marker>
+</agm-map>
+ </div>
+  </div>
+ 
