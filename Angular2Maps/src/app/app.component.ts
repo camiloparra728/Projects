@@ -64,7 +64,7 @@ export class AppComponent implements AfterViewInit {
     this.longitude = 0;
     this.zoom = 1;
     this.magic = "Reload";
-    this.message="Welcome, Press a bookmark to start";
+    this.message="Welcome, Press a marker to start";
   }
   //this method load after that view has been initialized
   ngAfterViewInit() {
